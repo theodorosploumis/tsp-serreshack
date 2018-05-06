@@ -1,1 +1,1 @@
-# tsp-serreshack
+# TSP problem for SerresHack 2018
