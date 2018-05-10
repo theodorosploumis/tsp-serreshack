@@ -1,25 +1,37 @@
 <?php
 
-include "../../vendor/autoload.php";
-include "../../locations.php";
+include "../variables.php";
+
+print "<div><a href='/'>Homepage</a></div>";
+print "<img src='/assets/img/map.png'>";
+
+if ($distances) {
+  print "<h2>Distances already calculated</h2>";
+  
+  foreach ($distances as $key => $value) {
+    print $key . ":" . $value . "<br />";
+  }
+  exit();
+}
 
 // Global variables
 $results_file = "distances.txt";
 $google_maps_key = "AIzaSyDzZNmXXe0hpuzPpvH7rdSVBTUNw8Bb1oI";
 
+global $google_maps_key;
+
 /**
  * @param $locations
  * @param $origin
  * @param $destination
- * @param string $key
  *
  * @return mixed
  */
-function GoogleMapsDistanceCalculator($locations, $origin, $destination, $key = "") {
-
-  if (!isset($key)) {
-    $key = $google_maps_key;
-  }
+function GoogleMapsDistanceCalculator($locations, $origin, $destination) {
+  
+  global $google_maps_key;
+  
+  $key = $google_maps_key;
 
   $origin_lat = $locations[$origin]['lat'];
   $origin_lon = $locations[$origin]['lon'];
@@ -86,4 +98,12 @@ foreach ($distances as $pair => $value) {
   fwrite($file, $pair . ":" . $value.PHP_EOL);
 }
 fclose($file);
-echo "Calculated distances successfully!";
+
+if ($distances) {
+  print "<h2>Calculated distances successfully!</h2>";
+  
+  foreach ($distances as $key => $value) {
+    print $key . ":" . $value . "<br />";
+  }
+  exit();
+}
