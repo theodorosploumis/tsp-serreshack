@@ -1,6 +1,6 @@
 <?php
 
-include "../variables.php";
+include __DIR__ ."/../variables.php";
 
 // $distances (the array of all distances)
 // $route = "Serres-Provatas"

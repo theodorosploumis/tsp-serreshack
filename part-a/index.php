@@ -1,6 +1,6 @@
 <?php
 
-include "../variables.php";
+include __DIR__. "/../variables.php";
 
 print "<div><a href='/'>Homepage</a></div>";
 print "<img src='/assets/img/map.png'>";
@@ -16,7 +16,7 @@ if ($distances) {
 
 // Global variables
 $results_file = "distances.txt";
-$google_maps_key = "AIzaSyDzZNmXXe0hpuzPpvH7rdSVBTUNw8Bb1oI";
+$google_maps_key = file_get_contents(__DIR__ . "/../key.txt");
 
 global $google_maps_key;
 
