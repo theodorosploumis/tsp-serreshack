@@ -1,13 +1,38 @@
 # TSP problem for SerresHack 2018
 
-## Part B
+## About SerresHack
+
+SerresHack is the sortname of Serres Hackathon, an annual Hackathon for IT students which is 
+organized at the city of Serres (Greece). See more at http://hackathon.serrestech.gr.
+
+
+## Usage
+
+This solution is based on php so php is a requirement.
+
+```
+git clone git@github.com:theodorosploumis/tsp-serreshack.git
+cd tsp-serreshack
+php -S localhost:7777 -t .
+```
+
+## Part B solutions (numbers only)
+
+- 01: 54.008km
+- 02: 54.008km
+- 03: 46.964km
+- 04: 57.732km
+- 05: 68.824km
+- 06: 68.824km
+
+
+## Part B detailed solutions
 
 ### 01: Serres -> Adelfiko (more than once to Adelfiko)
 
 ```
 km: 54.008
-Loops: 13
-Path:
+
 Serres
 Provatas
 Ano_Kamila
@@ -24,8 +49,7 @@ Adelfiko
 
 ```
 km: 54.008
-Loops: 13
-Path:
+
 Serres
 Provatas
 Ano_Kamila
@@ -42,8 +66,7 @@ Adelfiko
 
 ```
 km: 46.964
-Loops: 9
-Path:
+
 Serres
 Provatas
 Ano_Kamila
@@ -60,8 +83,7 @@ Adelfiko
 
 ```
 km: 26.669
-Loops: 5
-Path: 
+
 Serres
 Provatas
 Ano_Kamila
@@ -72,8 +94,7 @@ Koumaria
 
 ```
 km: 31.063
-Loops: 8
-Path: 
+
 Koumaria
 Ano_Kamila
 Kato_Mitrousi
@@ -83,9 +104,8 @@ Peponia
 Adelfiko
 ```
 
-Total:
 ```
-26.669 + 31.063 = 57.732
+Total: 26.669 + 31.063 = 57.732
 ```
 
 ### 05: Serres -> Adelfiko (each bin weighs 100kg, 2 lorries, 400kg/lorry, only once to Adelfiko)
@@ -119,8 +139,9 @@ Koumaria-Adelfiko: 2.466
 Total km: 30.249
 ```
 
-Total km 1st & 2nd lorry: **68.824**
-
+```
+Total (1st & 2nd lorry): 68.824km
+```
 
 ### 06: Serres -> Adelfiko (each bin weighs X, 2 lorries, 500kg/lorry1, 300kg/lorry2, only once to Adelfiko)
 
